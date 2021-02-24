@@ -13,6 +13,7 @@ class Box{
         World.add(world, this.bottomBody);
         World.add(world, this.rightBody);
         World.add(world, this.leftBody);
+        this.boxImg=loadImage("dustbingreen.png");
 
 
       }
@@ -25,8 +26,8 @@ class Box{
         translate(this.bottomBody.position.x, this.bottomBody.position.y);
         rotate(angle1);
         fill("red")       
-         rectMode(CENTER);
-        rect(0, 0, this.width,this.thickness);
+         imageMode(CENTER);
+        image(this.boxImg,0,-50, this.width,this.height);
         pop();
         
         push();
@@ -34,7 +35,7 @@ class Box{
         rotate(angle2);
         fill("red")       
         rectMode(CENTER);
-        rect(0, 0, this.thickness, this.height);
+        //rect(0, 0, this.thickness, this.height);
         pop();
        
         push();
@@ -42,7 +43,7 @@ class Box{
         rotate(angle3);
         fill("red")       
         rectMode(CENTER);
-        rect(0, 0, this.thickness, this.height);
+        //rect(0, 0, this.thickness, this.height);
         pop();
       }
 }

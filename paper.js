@@ -7,8 +7,9 @@ class Paper {
       }
       this.radius = radius;
 
-      this.body = Bodies.circle(x,y,70,options);
+      this.body = Bodies.circle(x,y,this.radius/2,options);
       World.add(world, this.body);
+      this.paperImg=loadImage("paper.png");
     }
     display(){
       var pos =this.body.position;
@@ -16,9 +17,9 @@ class Paper {
       push()
       translate(pos.x,pos.y);
       rotate(angle);
-      ellipseMode(CENTER);
+      imageMode(CENTER);
       fill("pink");
-      ellipse(0,0, this.radius,this.radius);
+      image(this.paperImg,0,0, this.radius,this.radius);
       pop()
     }
   };

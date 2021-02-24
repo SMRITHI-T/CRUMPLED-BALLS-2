@@ -10,8 +10,6 @@ var ground;
 
 function preload()
 {
-	boxImg=loadImage("sprites/dustbingreen.png");
-	paperImg=loadImage("sprites/paper.png");
 }
 
 function setup() {
@@ -20,12 +18,6 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
-	box=createSprite(700,650);
-	box.addImage(boxImg);
-	box.scale=0.5;
-	paper=createSprite(50,50,50);
-	paper.addImage(paperImg);
-	paper.scale=0.5;
 
 	//Create the Bodies Here.
 	ground=new Ground(400,670,800,20);
@@ -40,7 +32,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("white");
   paper.display();
  ground.display();
  box.display(); 
